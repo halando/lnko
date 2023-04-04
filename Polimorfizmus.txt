@@ -1,0 +1,114 @@
+2023-03-20
+
+__tombsugfx befejezése__
+
+Polimorfizmus/Többalakúság
+Azonos  nevű objektum, metódus,operátor másként viselkedik a körülményektől függően.
+
+Alakzatok rajzolása
+
+class Alakzat{
+public void render(){
+syso('ALakzat rajzolása')
+   }
+}
+
+class Negyszog extends Alakzat(){
+public void render(){
+syso('Négyszög rajzolása')
+   }
+}
+class Hatszog extends Alakzat(){
+public void render(){
+syso('Hatszög rajzolása')
+   }
+}
+
+Van egy szuperosztály az Alakzat. A Negyszog és a Hatszög örökli az Alakzat minden tulajdonságát.
+A render() metódus eltérően viselkedik a különböző osztályokban.
+
+miért polimorfizmus
+
+Lehet volna így is:
+renderNegyszog()
+renderHatszog()
+Így is működik, de a kód inkonzisztens.
+
+Felülírás
+
+Egy metódus jelen van a szuperosztályban és az alosztályban is.
+
+class Allat{
+public void haladas() {
+syso("séta")
+	}
+}
+class Lo extends Allat{
+@Override
+public void haladas() {
+syso("Ügetés")
+	}
+}
+
+Túlterhelt metódus
+
+class Minta{
+public void nyomtat(){
+Syso('csipke')
+}
+public void nyomtat(String content){
+Syso(content)
+}
+
+Operátor túlterhelés
+
+int szam1 = 30;
+int szam2 = 35;
+int sum = szam1 + szam2;
+
+String szo1 = 30;
+String szo2 = 35;
+String mondat = szo1 +szo2;
+
+Polimorf változók
+
+class Allat{
+public void mozog(){
+Syso("tram tram");
+ }
+}
+class kutya extends Allat{
+ @Override
+public void mozog(){
+Syso("prum prum")
+ }
+}
+
+class App {
+public static void main(String args){
+Allat allat;
+allat = new Allat();
+allat.mozog();
+allat = new Kutya();
+allat.mozog();
+ }
+}
+
+Integer a = 35;
+
+https://www.programiz.com/
+leet.code.com
+
+__Java FX__
+
+lista 
+
+listafx/
+ |-src
+
+
+ListPanel
+__combobox__
+
+ListView<String> list = new ListView();
+ComboBox<String> comb = new ComboBox<>();
